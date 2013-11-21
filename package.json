@@ -1,0 +1,16 @@
+{
+  "name": "igelkott-plugin",
+  "description": "A very simple plugin-handler plugin for Igelkott",
+  "version": "0.1.0",
+  "main": "igelkott-plugin.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "chai": "~1.4.2",
+    "mocha": "1.3.x",
+    "igelkott": "*"
+  },
+  "scripts": {
+    "test": "mocha -R spec --recursive"
+  }
+}
