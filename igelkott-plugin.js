@@ -7,11 +7,16 @@ var Plugin = function Plugin() {
     }
   };
 
-  this.listeners = {'trigger:reload': this.reload, 'trigger:load': this.load};
+  this.listeners = {'trigger:reload': this.reload, 'trigger:unload': this.unload, 'trigger:load': this.load};
 };
 
 Plugin.prototype.reload = function reload(message) {
-  this.igelkott.plugin.reload(message.parameters[1].split(' ')[1]);
+  this.igelkott.plugin.unload(message.parameters[1].split(' ')[1]);
+  this.igelkott.load(message.parameters[1].split(' ')[1]);
+};
+
+Plugin.prototype.unload = function unload(message) {
+  this.igelkott.plugin.unload(message.parameters[1].split(' ')[1]);
 };
 
 Plugin.prototype.load = function load(message) {
